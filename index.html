@@ -31,9 +31,10 @@
         font-size: 20px;
         font-family: Roboto;
         font-weight: 300;
-        text-align: right;
+        text-align: left;
         padding: 5px 10px;
         border-radius: 10px;
+        margin-top: 10px;
       }
 
       input:focus,
@@ -115,9 +116,9 @@
   </head>
   <body>
     <div id="container">
-      <h1>Digite os valores abaixo para calcular o valor total</h1>
+      <h1>Type below the amount of each box</h1>
       <div class="inputs">
-        <label for="brownAmount">Nº marrons: </label>
+        <label for="brownAmount">Brown boxes: </label>
         <input
           type="number"
           id="brownAmount"
@@ -128,7 +129,7 @@
       </div>
 
       <div class="inputs">
-        <label for="purpleAmount">Nº roxos: </label>
+        <label for="purpleAmount">Purple boxes: </label>
         <input
           type="number"
           id="purpleAmount"
@@ -139,7 +140,7 @@
       </div>
 
       <div class="inputs">
-        <label for="goldAmount">Nº dourados: </label>
+        <label for="goldAmount">Golden boxes: </label>
         <input
           type="number"
           id="goldAmount"
@@ -150,7 +151,7 @@
       </div>
 
       <div class="inputs">
-        <label for="blueAmount">Nº azuis: </label>
+        <label for="blueAmount">Blue boxes: </label>
         <input
           type="number"
           id="blueAmount"
@@ -160,7 +161,7 @@
         />
       </div>
 
-      <h2>Valor total: <span id="totalValue">0</span></h2>
+      <h2>Total Value: <span id="totalValue">0</span></h2>
     </div>
 
     <script>
