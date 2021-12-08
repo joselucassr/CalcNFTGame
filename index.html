@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: Roboto;
+        text-align: center;
+        background: #e9ebed;
+        color: #faedf0;
+        height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      input {
+        background: #29476d;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        font-family: Roboto;
+        font-weight: 300;
+        text-align: right;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type='number'] {
+        -moz-appearance: textfield;
+      }
+
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: rgb(190, 178, 180);
+        opacity: 1; /* Firefox */
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: rgb(190, 178, 180);
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: rgb(190, 178, 180);
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background: #ffffffa0;
+        padding: 1% 2% 3%;
+        color: #2c618e;
+        border-radius: 20px;
+        width: 40%;
+        margin-top: 40px;
+        box-shadow: 12px 12px 16px 0 rgb(27 27 39 / 25%),
+          -8px -8px 12px 0 rgb(237 239 255 / 30%);
+      }
+
+      .inputs {
+        margin-top: 10%;
+        text-align: left;
+        font-weight: 500;
+        font-size: 20px;
+        display: flex;
+        flex-flow: column;
+      }
+
+      #totalValue {
+        color: #ec255a;
+      }
+
+      h2 {
+        margin-top: 60px;
+        font-weight: 700;
+        color: #29476d;
+        font-size: 40px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        #container {
+          border-radius: 0px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Digite os valores abaixo para calcular o valor total</h1>
+      <div class="inputs">
+        <label for="brownAmount">Nº marrons: </label>
+        <input
+          type="number"
+          id="brownAmount"
+          name="brownAmount"
+          placeholder="0"
+          onkeyup="calcValues()"
+        />
+      </div>
+
+      <div class="inputs">
+        <label for="purpleAmount">Nº roxos: </label>
+        <input
+          type="number"
+          id="purpleAmount"
+          name="purpleAmount"
+          placeholder="0"
+          onkeyup="calcValues()"
+        />
+      </div>
+
+      <div class="inputs">
+        <label for="goldAmount">Nº dourados: </label>
+        <input
+          type="number"
+          id="goldAmount"
+          name="goldAmount"
+          placeholder="0"
+          onkeyup="calcValues()"
+        />
+      </div>
+
+      <div class="inputs">
+        <label for="blueAmount">Nº azuis: </label>
+        <input
+          type="number"
+          id="blueAmount"
+          name="blueAmount"
+          placeholder="0"
+          onkeyup="calcValues()"
+        />
+      </div>
+
+      <h2>Valor total: <span id="totalValue">0</span></h2>
+    </div>
+
+    <script>
+      let values = {
+        brown: 0.01425,
+        purple: 0.0325,
+        gold: 0.1625,
+        blue: 0.325,
+      };
+
+      const calcValues = () => {
+        let brownAmount = document.getElementById('brownAmount').value;
+        let purpleAmount = document.getElementById('purpleAmount').value;
+        let goldAmount = document.getElementById('goldAmount').value;
+        let blueAmount = document.getElementById('blueAmount').value;
+
+        let brownValue = values.brown * brownAmount;
+        let purpleValue = values.purple * purpleAmount;
+        let goldValue = values.gold * goldAmount;
+        let blueValue = values.blue * blueAmount;
+        let totalValue = brownValue + purpleValue + goldValue + blueValue;
+
+        document.getElementById('totalValue').innerHTML = totalValue;
+      };
+    </script>
+  </body>
+</html>
